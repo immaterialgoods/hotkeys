@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct TwoWayMap<S:Hashable,T:Hashable> : ExpressibleByDictionaryLiteral {
+internal struct TwoWayMap<S:Hashable,T:Hashable> : ExpressibleByDictionaryLiteral {
     // Literal convertible
     typealias Key   = S
     typealias Value = T

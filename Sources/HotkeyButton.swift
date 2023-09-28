@@ -8,11 +8,14 @@
 
 import Cocoa
 
-@objc public protocol HotkeyButtonDelegate {
-    @objc func hotkeyButton(_ button: HotkeyButton, updatedHotkey hotkey:HotkeyDescriptor?)
+@objc 
+public protocol HotkeyButtonDelegate {
+    @objc 
+    func hotkeyButton(_ button: HotkeyButton, updatedHotkey hotkey:HotkeyDescriptor?)
 }
 
-@objc public class HotkeyButton: NSButton {
+@objc 
+public class HotkeyButton: NSButton {
 
 /**
 Set or get the hotkey from here. 3 possible states:
@@ -20,31 +23,36 @@ Set or get the hotkey from here. 3 possible states:
      - empty hotkey means the user cleared out the default but didn't set anything in its place (shows "no hotkey")
      - complete hotkey means the user has set a hotkey (shows that hotkey rather than default)
  */
-    @objc public var hotkey: HotkeyDescriptor? = nil {
+    @objc 
+    public var hotkey: HotkeyDescriptor? = nil {
         didSet {
             self.inProgressHotkey = self.hotkey
         }
     }
     
     /// The default hotkey that the user can revert back to if desired
-    @objc public var defaultHotkey: HotkeyDescriptor? = nil{
+    @objc 
+    public var defaultHotkey: HotkeyDescriptor? = nil{
         didSet {
             updateForHotkey()
         }
     }
     
     /// What modifiers to require
-    @objc public var modifierRequirement: HotkeyModifierRequirement = .menuModifiers
+    @objc 
+    public var modifierRequirement: HotkeyModifierRequirement = .menuModifiers
     
     /// menuStyle = YES shows the display string rather than the key equivalent string
-    @objc public var menuStyle = true {
+    @objc 
+    public var menuStyle = true {
         didSet {
             updateForHotkey()
         }
     }
         
     /// Delegate gets notified when hotkey changes
-    @objc public weak var delegate: HotkeyButtonDelegate? = nil
+    @objc 
+    public weak var delegate: HotkeyButtonDelegate? = nil
     
     private var active = false {
         didSet {
@@ -334,7 +342,8 @@ Set or get the hotkey from here. 3 possible states:
         
     }
     
-    @objc private func resetTitle(_ timer: Timer) {
+    @objc 
+    private func resetTitle(_ timer: Timer) {
         messageTimer?.invalidate()
         messageTimer = nil
         updateForHotkey()

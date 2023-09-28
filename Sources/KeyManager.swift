@@ -9,8 +9,7 @@
 import Cocoa
 import Carbon
 
-final class KeyManager {
-    
+internal final class KeyManager {
     /// The singleton
     static let shared = KeyManager()
 
@@ -252,8 +251,5 @@ final class KeyManager {
 
         return false
     }
-    
-
-    
     
 }

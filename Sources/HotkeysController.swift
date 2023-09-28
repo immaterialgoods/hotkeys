@@ -582,7 +582,7 @@ extension HotkeysController: NSTableViewDelegate {
         var topLevelObjects: NSArray? = nil
         Bundle(for: self.classForCoder).loadNibNamed(name, owner: self, topLevelObjects: &topLevelObjects)
         
-        // For some reason, NSApplication is one of the top-level objects! (There should only be one, our view.) So, filter...
+        // For some reason, NSApplication is one of the top-level objects! (I would expect only one, our view.) So, filter...
         var foundView: NSView? = nil
         for object in topLevelObjects! {
             if (object as! NSObject).isKind(of: NSView.self) {

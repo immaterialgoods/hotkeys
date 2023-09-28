@@ -4,7 +4,7 @@ Hotkeys is a straightforward framework for macOS apps that want to add custom ho
 
 ## Installation
 
-There is not yet a CocoaPod for this. For now we recommend downloading it an manually including the project file into your project.
+Install using Swift Package Manager.
 
 ## Usage
 
