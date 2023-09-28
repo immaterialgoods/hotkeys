@@ -18,7 +18,7 @@ Two-way map code used in this project came from [Jose Canepa](https://gist.githu
 
 ## BSD License
 
-Copyright (c) 2019-2020 Andreas Schwarz @ immaterial
+Copyright (c) 2019-2023 Andreas Schwarz @ immaterial
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
