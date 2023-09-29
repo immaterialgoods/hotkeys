@@ -580,7 +580,7 @@ extension HotkeysController: NSTableViewDelegate {
     /// Obviously all the code in here is dangerous. It should only crash if the nib is misconfigured, which we will know immediately.
     private func loadViewFromNib(name: String) -> NSView {
         var topLevelObjects: NSArray? = nil
-        Bundle(for: self.classForCoder).loadNibNamed(name, owner: self, topLevelObjects: &topLevelObjects)
+        Bundle.module.loadNibNamed(name, owner: self, topLevelObjects: &topLevelObjects)
         
         // For some reason, NSApplication is one of the top-level objects! (I would expect only one, our view.) So, filter...
         var foundView: NSView? = nil
