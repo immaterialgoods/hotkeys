@@ -437,7 +437,7 @@ public final class HotkeysController: NSObject {
     private func checkItemsForSavedHotkeys() {
         for item in allHotkeyItemsByIdentifier.values {
             if let data = UserDefaults.standard.data(forKey: ("IMHotkey-" + item.identifier)) {
-                if let hotkey = try? NSKeyedUnarchiver.unarchivedObject(ofClass: HotkeyDescriptor.self, from: data) {
+                if let hotkey = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [HotkeyDescriptor.self, NSString.self, NSNumber.self], from: data) as? HotkeyDescriptor {
                     item.hotkey = hotkey
                     continue
                 }
