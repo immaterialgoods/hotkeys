@@ -118,7 +118,7 @@ public final class HotkeysController: NSObject {
         
         // Otherwise load it from UserDefaults
         if let data = UserDefaults.standard.data(forKey: ("IMHotkey-" + identifier)) {
-            if let hotkey = try? NSKeyedUnarchiver.unarchivedObject(ofClass: HotkeyDescriptor.self, from: data) {
+            if let hotkey = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [HotkeyDescriptor.self, NSString.self, NSNumber.self], from: data) as? HotkeyDescriptor {
                 return hotkey
             }
         }
